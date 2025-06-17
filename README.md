@@ -24,7 +24,7 @@ Tech Stack
 - **Testing**: Jest + Supertest
 - **Documentation**: OpenAPI/Swagger
 
-## 📋 Prerequisites
+Prerequisites
 
 - Node.js (v18 or higher)
 - MySQL (v8 or higher)
