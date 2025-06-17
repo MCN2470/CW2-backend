@@ -68,7 +68,7 @@ export class Hotel extends Model<HotelAttributes> implements HotelAttributes {
   }
 
   public getStarRating(): string {
-    return "⭐".repeat(Math.max(0, Math.min(5, this.starRating)));
+    return "*".repeat(Math.max(0, Math.min(5, this.starRating)));
   }
 
   public calculateTotalPrice(nights: number): number {

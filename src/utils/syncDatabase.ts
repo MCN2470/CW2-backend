@@ -14,7 +14,7 @@ const createDatabase = async () => {
   try {
     // Test connection
     await sequelize.authenticate();
-    console.log("✅ Database connection established successfully");
+    console.log("Database connection established successfully");
 
     // Initialize model associations
     initializeAssociations();
@@ -24,14 +24,14 @@ const createDatabase = async () => {
       force: false, // Set to true to drop existing tables
       alter: true, // Update table structure if needed
     });
-    console.log("✅ All models synchronized successfully");
+    console.log("All models synchronized successfully");
 
     // Create sample data
     await createSampleData();
 
-    console.log("✅ Database setup completed successfully!");
+    console.log("Database setup completed successfully!");
   } catch (error) {
-    console.error("❌ Unable to set up database:", error);
+    console.error("Unable to set up database:", error);
   }
 };
 
@@ -52,7 +52,7 @@ const createSampleData = async () => {
         role: "admin",
         isVerified: true,
       });
-      console.log("✅ Admin user created");
+      console.log("Admin user created");
     }
 
     // Check if sample hotel exists
@@ -101,7 +101,7 @@ const createSampleData = async () => {
         email: "info@grandwanderlust.com",
         website: "https://grandwanderlust.com",
       });
-      console.log("✅ Sample hotel created");
+      console.log("Sample hotel created");
 
       // Create another sample hotel
       await Hotel.create({
@@ -140,21 +140,21 @@ const createSampleData = async () => {
         email: "info@seasideresort.com",
         website: "https://seasideresort.com",
       });
-      console.log("✅ Additional sample hotel created");
+      console.log("Additional sample hotel created");
     }
 
-    console.log("✅ Sample data setup completed");
+    console.log("Sample data setup completed");
   } catch (error) {
-    console.error("❌ Error creating sample data:", error);
+    console.error("Error creating sample data:", error);
   }
 };
 
 const dropAllTables = async () => {
   try {
     await sequelize.drop();
-    console.log("✅ All tables dropped successfully");
+    console.log("All tables dropped successfully");
   } catch (error) {
-    console.error("❌ Error dropping tables:", error);
+    console.error("Error dropping tables:", error);
   }
 };
 
@@ -165,11 +165,11 @@ export { createDatabase, createSampleData, dropAllTables };
 if (require.main === module) {
   createDatabase()
     .then(() => {
-      console.log("✅ Database sync completed");
+      console.log("Database sync completed");
       process.exit(0);
     })
     .catch((error) => {
-      console.error("❌ Database sync failed:", error);
+      console.error("Database sync failed:", error);
       process.exit(1);
     });
 }

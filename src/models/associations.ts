@@ -37,7 +37,7 @@ export const initializeAssociations = () => {
   Message.belongsTo(User, { foreignKey: "userId", as: "user" });
   Message.belongsTo(User, { foreignKey: "employeeId", as: "employee" });
 
-  console.log("✅ Model associations initialized successfully");
+  console.log("Model associations initialized successfully");
 };
 
 export { User, Hotel, Booking, Review, Favorite, Message };

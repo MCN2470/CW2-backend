@@ -41,7 +41,7 @@ export class Review
 
   // Instance methods
   public getStarRating(): string {
-    return "⭐".repeat(Math.max(0, Math.min(5, this.rating)));
+    return "*".repeat(Math.max(0, Math.min(5, this.rating)));
   }
 
   public isExcellent(): boolean {

@@ -56,10 +56,10 @@ export const sequelize = createSequelizeInstance();
 export const testConnection = async (): Promise<boolean> => {
   try {
     await sequelize.authenticate();
-    console.log("✅ Database connection has been established successfully.");
+    console.log("Database connection has been established successfully.");
     return true;
   } catch (error) {
-    console.error("❌ Unable to connect to the database:", error);
+    console.error("Unable to connect to the database:", error);
     return false;
   }
 };
@@ -76,13 +76,13 @@ export const initializeDatabase = async (): Promise<void> => {
     // Sync models (only in development)
     if (environment === "development") {
       await sequelize.sync({ alter: true });
-      console.log("✅ Database models synchronized.");
+      console.log("Database models synchronized.");
     } else if (environment === "test") {
       await sequelize.sync({ force: true });
-      console.log("✅ Test database reset and synchronized.");
+      console.log("Test database reset and synchronized.");
     }
   } catch (error) {
-    console.error("❌ Database initialization failed:", error);
+    console.error("Database initialization failed:", error);
     throw error;
   }
 };
