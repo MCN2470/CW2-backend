@@ -19,7 +19,7 @@ export interface HotelAttributes {
   checkInTime?: string;
   checkOutTime?: string;
   hotelbedsId?: string; // External API reference
-  isActive: boolean;
+  isActive?: boolean;
   totalRooms: number;
   availableRooms: number;
   phoneNumber?: string;
@@ -27,6 +27,8 @@ export interface HotelAttributes {
   website?: string;
   createdAt?: Date;
   updatedAt?: Date;
+  // Association fields
+  reviews?: any[];
 }
 
 export class Hotel extends Model<HotelAttributes> implements HotelAttributes {

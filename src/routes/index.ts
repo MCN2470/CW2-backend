@@ -1,5 +1,8 @@
 import Router from "@koa/router";
 import authRoutes from "./auth";
+import hotelRoutes from "./hotels";
+import bookingRoutes from "./bookings";
+import externalRoutes from "./external";
 
 const router = new Router({
   prefix: "/api",
@@ -31,12 +34,49 @@ router.get("/", async (ctx) => {
         profile: "GET /api/auth/profile (requires token)",
         logout: "POST /api/auth/logout (requires token)",
       },
+      hotels: {
+        list: "GET /api/hotels",
+        search: "GET /api/hotels?city=...&price=...&rating=...",
+        details: "GET /api/hotels/:id",
+        availability: "GET /api/hotels/:id/availability",
+        create: "POST /api/hotels (admin/employee)",
+        update: "PUT /api/hotels/:id (admin/employee)",
+        delete: "DELETE /api/hotels/:id (admin)",
+      },
+      bookings: {
+        myBookings: "GET /api/bookings/my",
+        create: "POST /api/bookings",
+        details: "GET /api/bookings/:id",
+        update: "PUT /api/bookings/:id",
+        cancel: "DELETE /api/bookings/:id",
+        listAll: "GET /api/bookings (admin/employee)",
+      },
+      external: {
+        flights: "GET /api/external/flights/search",
+        oneWayFlights: "GET /api/external/flights/oneway",
+        airports: "GET /api/external/airports/search",
+        popularDestinations: "GET /api/external/destinations/popular",
+        priceTrends: "GET /api/external/price-trends",
+        externalHotels: "GET /api/external/hotels/search",
+        hotelDestinations: "GET /api/external/hotels/destinations",
+        combinedSearch: "GET /api/external/combined/search",
+        syncHotels: "POST /api/external/sync-hotels (admin/employee)",
+      },
     },
   };
 });
 
 // Authentication routes
 router.use(authRoutes.routes(), authRoutes.allowedMethods());
+
+// Hotel routes
+router.use(hotelRoutes.routes(), hotelRoutes.allowedMethods());
+
+// Booking routes
+router.use(bookingRoutes.routes(), bookingRoutes.allowedMethods());
+
+// External API routes
+router.use(externalRoutes.routes(), externalRoutes.allowedMethods());
 
 // TODO: Add other route modules here
 // import userRoutes from './users';

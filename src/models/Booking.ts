@@ -18,11 +18,13 @@ export interface BookingAttributes {
   guestNames?: string[];
   contactEmail: string;
   contactPhone?: string;
-  bookingReference: string;
+  bookingReference?: string;
   cancellationReason?: string;
   cancellationDate?: Date;
   createdAt?: Date;
   updatedAt?: Date;
+  // Association fields
+  hotel?: any;
 }
 
 export class Booking
@@ -45,7 +47,7 @@ export class Booking
   public guestNames?: string[];
   public contactEmail!: string;
   public contactPhone?: string;
-  public bookingReference!: string;
+  public bookingReference?: string;
   public cancellationReason?: string;
   public cancellationDate?: Date;
 
