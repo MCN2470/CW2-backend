@@ -1,8 +1,8 @@
-# Wanderlust Travel API
+Wanderlust Travel API
 
 A RESTful API backend for the Wanderlust Travel booking system built with Koa.js, TypeScript, MySQL, and Sequelize.
 
-## 🚀 Features
+Features
 
 - **Authentication & Authorization**: JWT-based authentication with role-based access control
 - **Hotel Management**: CRUD operations for hotel listings with operator permissions
@@ -15,7 +15,7 @@ A RESTful API backend for the Wanderlust Travel booking system built with Koa.js
 - **Comprehensive Testing**: Full test suite with Jest and Supertest
 - **API Documentation**: OpenAPI/Swagger specification
 
-## 🛠️ Tech Stack
+Tech Stack
 
 - **Framework**: Koa.js with TypeScript
 - **Database**: MySQL with Sequelize ORM
@@ -30,46 +30,46 @@ A RESTful API backend for the Wanderlust Travel booking system built with Koa.js
 - MySQL (v8 or higher)
 - npm or yarn
 
-## 🔧 Installation
+Installation
 
 1. Clone the repository:
 
-```bash
+bash
 git clone <repository-url>
 cd wanderlust-api
-```
+
 
 2. Install dependencies:
 
-```bash
+bash
 npm install
-```
+
 
 3. Set up environment variables:
 
-```bash
+bash
 cp .env.example .env
-```
+
 
 Edit `.env` with your configuration.
 
 4. Set up the database:
 
-```bash
+bash
 npm run db:create
 npm run db:migrate
 npm run db:seed
-```
+
 
 5. Start the development server:
 
-```bash
+bash
 npm run dev
-```
+
 
 The API will be available at `http://localhost:3001`
 
-## 📝 Scripts
+ Scripts
 
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build for production
@@ -78,16 +78,16 @@ The API will be available at `http://localhost:3001`
 - `npm run test:watch` - Run tests in watch mode
 - `npm run test:coverage` - Run tests with coverage report
 
-## 📚 API Documentation
+API Documentation
 
 Once the server is running, visit:
 
 - Swagger UI: `http://localhost:3001/docs`
 - OpenAPI JSON: `http://localhost:3001/api-docs`
 
-## 🔐 Environment Variables
+ Environment Variables
 
-```env
+env
 # Server Configuration
 PORT=3001
 NODE_ENV=development
@@ -112,9 +112,9 @@ FACEBOOK_ACCESS_TOKEN=your_facebook_token
 TWITTER_ACCESS_TOKEN=your_twitter_token
 ```
 
-## 🧪 Testing
+ Testing
 
-```bash
+bash
 # Run all tests
 npm test
 
@@ -123,9 +123,9 @@ npm run test:watch
 
 # Run with coverage
 npm run test:coverage
-```
 
-## 📁 Project Structure
+
+Project Structure
 
 ```
 src/
@@ -140,7 +140,7 @@ src/
 └── tests/          # Test files
 ```
 
-## 🤝 Contributing
+ Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -148,6 +148,4 @@ src/
 4. Add tests
 5. Submit a pull request
 
-## 📄 License
 
-This project is licensed under the MIT License.
