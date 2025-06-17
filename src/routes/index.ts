@@ -1,4 +1,5 @@
 import Router from "@koa/router";
+import authRoutes from "./auth";
 
 const router = new Router({
   prefix: "/api",
@@ -23,16 +24,25 @@ router.get("/", async (ctx) => {
     documentation: "/api/docs",
     health: "/api/health",
     version: "1.0.0",
+    endpoints: {
+      auth: {
+        register: "POST /api/auth/register",
+        login: "POST /api/auth/login",
+        profile: "GET /api/auth/profile (requires token)",
+        logout: "POST /api/auth/logout (requires token)",
+      },
+    },
   };
 });
 
+// Authentication routes
+router.use(authRoutes.routes(), authRoutes.allowedMethods());
+
 // TODO: Add other route modules here
-// import authRoutes from './auth';
 // import userRoutes from './users';
 // import hotelRoutes from './hotels';
 // import messageRoutes from './messages';
 
-// router.use(authRoutes.routes(), authRoutes.allowedMethods());
 // router.use(userRoutes.routes(), userRoutes.allowedMethods());
 // router.use(hotelRoutes.routes(), hotelRoutes.allowedMethods());
 // router.use(messageRoutes.routes(), messageRoutes.allowedMethods());

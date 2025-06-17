@@ -140,7 +140,7 @@ export const detailedLogger = async (
   };
 
   if (process.env.NODE_ENV === "development") {
-    console.log("📥 Request:", JSON.stringify(requestLog, null, 2));
+    console.log("Request:", JSON.stringify(requestLog, null, 2));
   }
 
   await next();
@@ -158,6 +158,6 @@ export const detailedLogger = async (
   };
 
   if (process.env.NODE_ENV === "development") {
-    console.log("📤 Response:", JSON.stringify(responseLog, null, 2));
+    console.log("Response:", JSON.stringify(responseLog, null, 2));
   }
 };
